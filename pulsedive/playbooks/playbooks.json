@@ -5,7 +5,7 @@
       "uuid": "8f05187a-042b-4900-99fa-b905c3d79f8c",
       "@type": "WorkflowCollection",
       "name": "Sample - Pulsedive - 1.0.0",
-      "description": "Pulsedive is a free threat intelligence platform. Search, scan, and enrich IPs, URLs, domains and other IOCs from OSINT feeds or submit your own.",
+      "description": "Pulsedive is a free threat intelligence platform that allows users to search, scan, and enrich IP addresses, URLs, domains, and other Indicators of Compromise (IOCs) using data from open-source intelligence (OSINT) feeds. Users can also submit their own IOCs for analysis and enrichment.",
       "visible": true,
       "image": null,
       "recordTags": [
