@@ -1,0 +1,848 @@
+{
+    "name": "pulsedive",
+    "version": "1.0.0",
+    "label": "Pulsedive",
+    "description": "Pulsedive is a free threat intelligence platform. Search, scan, and enrich IPs, URLs, domains and other IOCs from OSINT feeds or submit your own.",
+    "publisher": "SpryIQ.co",
+    "icon_small_name": "small.png",
+    "icon_large_name": "large.png",
+    "cs_approved": false,
+    "cs_compatible": true,
+    "category": [
+        "Threat Intelligence"
+    ],
+    "help_online": "",
+    "configuration": {
+        "fields": [
+            {
+                "title": "Server URL",
+                "type": "text",
+                "name": "server_url",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Base URL of the Pulsedive API (e.g. https://pulsedive.com)"
+            },
+            {
+                "title": "API KEY",
+                "type": "password",
+                "name": "api_key",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Pulsedive API key for authentication"
+            },
+            {
+                "title": "Verify SSL",
+                "type": "checkbox",
+                "name": "verify_ssl",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": false
+            }
+        ]
+    },
+    "operations": [
+        {
+            "operation": "get_ip_reputation",
+            "title": "Get IP Reputation",
+            "annotation": "get_ip_reputation",
+            "description": "The \"Get IP Reputation\" action retrieves threat intelligence and contextual information about a given IP address, helping analysts determine whether the IP is malicious, suspicious, or benign.",
+            "category": "investigation",
+            "is_config_required": true,
+            "visible": true,
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "IP Address",
+                    "type": "text",
+                    "name": "indicator",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Enter the IP address you want to check the reputation for.\t"
+                }
+            ],
+            "open": false,
+            "output_schema": {
+                "qid": "",
+                "iid": "",
+                "indicator": "",
+                "type": "",
+                "risk": "",
+                "risk_recommended": "",
+                "manualrisk": "",
+                "retired": "",
+                "stamp_added": "",
+                "stamp_updated": "",
+                "stamp_seen": "",
+                "stamp_probed": "",
+                "stamp_retired": "",
+                "recent": "",
+                "submissions": "",
+                "umbrella_rank": "",
+                "umbrella_domain": "",
+                "riskfactors": [
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    }
+                ],
+                "redirects": {
+                    "from": [],
+                    "to": [
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        },
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        },
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        }
+                    ]
+                },
+                "threats": [
+                    {
+                        "tid": "",
+                        "name": "",
+                        "category": "",
+                        "risk": "",
+                        "stamp_linked": ""
+                    },
+                    {
+                        "tid": "",
+                        "name": "",
+                        "category": "",
+                        "risk": "",
+                        "stamp_linked": ""
+                    },
+                    {
+                        "tid": "",
+                        "name": "",
+                        "category": "",
+                        "risk": "",
+                        "stamp_linked": ""
+                    },
+                    {
+                        "tid": "",
+                        "name": "",
+                        "category": "",
+                        "risk": "",
+                        "stamp_linked": ""
+                    },
+                    {
+                        "tid": "",
+                        "name": "",
+                        "category": "",
+                        "risk": "",
+                        "stamp_linked": ""
+                    }
+                ],
+                "feeds": [
+                    {
+                        "fid": "",
+                        "name": "",
+                        "category": "",
+                        "organization": "",
+                        "pricing": "",
+                        "stamp_linked": ""
+                    },
+                    {
+                        "fid": "",
+                        "name": "",
+                        "category": "",
+                        "organization": "",
+                        "pricing": "",
+                        "stamp_linked": ""
+                    }
+                ],
+                "comments": [
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    },
+                    {
+                        "cid": "",
+                        "username": "",
+                        "title": "",
+                        "comment": "",
+                        "stamp_added": "",
+                        "stamp_updated": ""
+                    }
+                ]
+            }
+        },
+        {
+            "operation": "get_links_of_indicator",
+            "title": "Get Links of Indicator",
+            "annotation": "get_links_of_indicator",
+            "description": "The \"Get Links of Indicator\" action is used to retrieve all related indicators and their associations (also called links) for a given IOC (Indicator of Compromise), such as a domain, IP address, URL, or file hash.",
+            "category": "investigation",
+            "is_config_required": true,
+            "visible": true,
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Indicator",
+                    "type": "text",
+                    "name": "indicator",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Enter an indicator value such as an IP address or domain name."
+                }
+            ],
+            "open": true,
+            "output_schema": {
+                "qid": "",
+                "iid": "",
+                "indicator": "",
+                "type": "",
+                "risk": "",
+                "risk_recommended": "",
+                "manualrisk": "",
+                "retired": "",
+                "stamp_added": "",
+                "stamp_updated": "",
+                "stamp_seen": "",
+                "stamp_probed": "",
+                "stamp_retired": "",
+                "recent": "",
+                "submissions": "",
+                "umbrella_rank": "",
+                "umbrella_domain": "",
+                "riskfactors": [
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    }
+                ],
+                "redirects": {
+                    "from": [
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        }
+                    ],
+                    "to": [
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        },
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        }
+                    ]
+                },
+                "threats": [],
+                "feeds": [],
+                "comments": [],
+                "attributes": {
+                    "hosttype": [
+                        "",
+                        ""
+                    ],
+                    "port": [
+                        "",
+                        ""
+                    ],
+                    "protocol": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "technology": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ]
+                },
+                "properties": {
+                    "geo": {
+                        "country": "",
+                        "countrycode": "",
+                        "region": "",
+                        "org": ""
+                    },
+                    "whois": {
+                        "admin country": "",
+                        "registrant country": "",
+                        "tech country": "",
+                        "name server": [
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "admin state/province": "",
+                        "registrant state/province": "",
+                        "tech state/province": "",
+                        "++registrant": "",
+                        "++abuse": "",
+                        "registrar": "",
+                        "registrar abuse contact email": "",
+                        "registrar iana id": "",
+                        "registrar url": "",
+                        "registrar whois server": "",
+                        "domain name": "",
+                        "registry domain id": "",
+                        "tech organization": "",
+                        "registrant organization": "",
+                        "admin organization": "",
+                        "++registrar": "",
+                        "dnssec": "",
+                        "registrant email": "",
+                        "tech email": "",
+                        "admin email": "",
+                        "registrar registration expiration date": "",
+                        "creation date": "",
+                        "registrar abuse contact phone": "",
+                        "updated date": "",
+                        "domain status": [
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "++updated": "",
+                        "++expires": "",
+                        "++registered": ""
+                    },
+                    "http": {
+                        "content-type": "",
+                        "cache-control": "",
+                        "p3p": "",
+                        "server": "",
+                        "x-frame-options": "",
+                        "strict-transport-security": "",
+                        "++code": "",
+                        "content-encoding": "",
+                        "content-length": "",
+                        "++content-type": "",
+                        "expires": "",
+                        "alt-svc": "",
+                        "cross-origin-opener-policy": "",
+                        "report-to": "",
+                        "permissions-policy": "",
+                        "++redirect": "",
+                        "x-xss-protection": "",
+                        "++target": "",
+                        "accept-ch": "",
+                        "set-cookie": "",
+                        "date": "",
+                        "content-security-policy-report-only": ""
+                    },
+                    "ssl": {
+                        "domain": "",
+                        "version": "",
+                        "subject": "",
+                        "issuer": "",
+                        "org": "",
+                        "expires": "",
+                        "valid": "",
+                        "fingerprint": ""
+                    },
+                    "dns": {
+                        "mname": "",
+                        "ns": [
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "rname": "",
+                        "txt": [
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "mx": "",
+                        "a": "",
+                        "caa": "",
+                        "aaaa": "",
+                        "soa": ""
+                    },
+                    "meta": {
+                        "referrer": "",
+                        "charset": "",
+                        "++title": ""
+                    },
+                    "dom": {
+                        "screenshot": ""
+                    },
+                    "cookies": {
+                        "aec": "",
+                        "__secure-enid": [
+                            "",
+                            ""
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "operation": "get_domain_reputation",
+            "title": "Get Domain Reputation",
+            "annotation": "get_domain_reputation",
+            "description": "The \"Get Domain Reputation\" action is designed to assess the trustworthiness and threat level of a given Domain Name. \nThis action helps analysts determine whether a domain is potentially malicious, suspicious, or safe.",
+            "category": "investigation",
+            "is_config_required": true,
+            "visible": true,
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Domain Name",
+                    "type": "text",
+                    "name": "indicator",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Enter the domain name to analyze for reputation."
+                }
+            ],
+            "open": false,
+            "output_schema": {
+                "qid": "",
+                "iid": "",
+                "indicator": "",
+                "type": "",
+                "risk": "",
+                "risk_recommended": "",
+                "manualrisk": "",
+                "retired": "",
+                "stamp_added": "",
+                "stamp_updated": "",
+                "stamp_seen": "",
+                "stamp_probed": "",
+                "stamp_retired": "",
+                "recent": "",
+                "submissions": "",
+                "umbrella_rank": "",
+                "umbrella_domain": "",
+                "riskfactors": [
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    },
+                    {
+                        "rfid": "",
+                        "description": "",
+                        "risk": ""
+                    }
+                ],
+                "redirects": {
+                    "from": [
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        }
+                    ],
+                    "to": [
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        },
+                        {
+                            "iid": "",
+                            "indicator": ""
+                        }
+                    ]
+                },
+                "threats": [],
+                "feeds": [],
+                "comments": [],
+                "attributes": {
+                    "hosttype": [
+                        "",
+                        ""
+                    ],
+                    "port": [
+                        "",
+                        ""
+                    ],
+                    "protocol": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "technology": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ]
+                },
+                "properties": {
+                    "geo": {
+                        "country": "",
+                        "countrycode": "",
+                        "region": "",
+                        "org": ""
+                    },
+                    "whois": {
+                        "admin country": "",
+                        "registrant country": "",
+                        "tech country": "",
+                        "name server": [
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "admin state/province": "",
+                        "registrant state/province": "",
+                        "tech state/province": "",
+                        "++registrant": "",
+                        "++abuse": "",
+                        "registrar": "",
+                        "registrar abuse contact email": "",
+                        "registrar iana id": "",
+                        "registrar url": "",
+                        "registrar whois server": "",
+                        "domain name": "",
+                        "registry domain id": "",
+                        "tech organization": "",
+                        "registrant organization": "",
+                        "admin organization": "",
+                        "++registrar": "",
+                        "dnssec": "",
+                        "registrant email": "",
+                        "tech email": "",
+                        "admin email": "",
+                        "registrar registration expiration date": "",
+                        "creation date": "",
+                        "registrar abuse contact phone": "",
+                        "updated date": "",
+                        "domain status": [
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "++updated": "",
+                        "++expires": "",
+                        "++registered": ""
+                    },
+                    "http": {
+                        "content-type": "",
+                        "cache-control": "",
+                        "p3p": "",
+                        "server": "",
+                        "x-frame-options": "",
+                        "strict-transport-security": "",
+                        "++code": "",
+                        "content-encoding": "",
+                        "content-length": "",
+                        "++content-type": "",
+                        "expires": "",
+                        "alt-svc": "",
+                        "cross-origin-opener-policy": "",
+                        "report-to": "",
+                        "permissions-policy": "",
+                        "++redirect": "",
+                        "x-xss-protection": "",
+                        "++target": "",
+                        "accept-ch": "",
+                        "set-cookie": "",
+                        "date": "",
+                        "content-security-policy-report-only": ""
+                    },
+                    "ssl": {
+                        "domain": "",
+                        "version": "",
+                        "subject": "",
+                        "issuer": "",
+                        "org": "",
+                        "expires": "",
+                        "valid": "",
+                        "fingerprint": ""
+                    },
+                    "dns": {
+                        "mname": "",
+                        "ns": [
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "rname": "",
+                        "txt": [
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "mx": "",
+                        "a": "",
+                        "caa": "",
+                        "aaaa": "",
+                        "soa": ""
+                    },
+                    "meta": {
+                        "referrer": "",
+                        "charset": "",
+                        "++title": ""
+                    },
+                    "dom": {
+                        "screenshot": ""
+                    },
+                    "cookies": {
+                        "aec": "",
+                        "__secure-enid": [
+                            "",
+                            ""
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

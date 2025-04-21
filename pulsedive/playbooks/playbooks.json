@@ -1,0 +1,255 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "8f05187a-042b-4900-99fa-b905c3d79f8c",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Pulsedive - 1.0.0",
+      "description": "Pulsedive is a free threat intelligence platform. Search, scan, and enrich IPs, URLs, domains and other IOCs from OSINT feeds or submit your own.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "pulsedive"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "7cba2416-e0ab-423b-9ba8-13023d362308",
+          "collection": "/api/3/workflow_collections/8f05187a-042b-4900-99fa-b905c3d79f8c",
+          "triggerLimit": null,
+          "description": "The \"Get IP Reputation\" action retrieves threat intelligence and contextual information about a given IP address, helping analysts determine whether the IP is malicious, suspicious, or benign.",
+          "name": "Get IP Reputation",
+          "tag": "#Pulsedive",
+          "recordTags": [
+            "pulsedive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5c2a0f5b-94a7-49ef-9aac-6afdbd6c973c",
+          "steps": [
+            {
+              "uuid": "5c2a0f5b-94a7-49ef-9aac-6afdbd6c973c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "854d0eea-3ff9-46a5-8645-518e33b477f5",
+                "title": "Pulsedive: Get IP Reputation",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "f77dd0e6-7fbe-4138-8ee0-1a26e7cfa85c",
+              "@type": "WorkflowStep",
+              "name": "Get IP Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Pulsedive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "pulsedive",
+                "operation": "get_ip_reputation",
+                "operationTitle": "Get IP Reputation",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "80fd732f-c076-4cb4-b7c0-cc5e64ed258a",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get IP Reputation",
+              "sourceStep": "/api/3/workflow_steps/5c2a0f5b-94a7-49ef-9aac-6afdbd6c973c",
+              "targetStep": "/api/3/workflow_steps/f77dd0e6-7fbe-4138-8ee0-1a26e7cfa85c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "28bdea80-b72e-41ee-846d-4b8ff18dd8a4",
+          "collection": "/api/3/workflow_collections/8f05187a-042b-4900-99fa-b905c3d79f8c",
+          "triggerLimit": null,
+          "description": "The \"Get Links of Indicator\" action is used to retrieve all related indicators and their associations (also called links) for a given IOC (Indicator of Compromise), such as a domain, IP address, URL, or file hash.",
+          "name": "Get Links of Indicator",
+          "tag": "#Pulsedive",
+          "recordTags": [
+            "pulsedive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d9032872-261c-432e-b159-67e558d78da5",
+          "steps": [
+            {
+              "uuid": "d9032872-261c-432e-b159-67e558d78da5",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "397c112b-d6bd-4ca3-9869-8adde6ac7dac",
+                "title": "Pulsedive: Get Links of Indicator",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "95a6bae9-28c2-4821-8f14-753dd08334b3",
+              "@type": "WorkflowStep",
+              "name": "Get Links of Indicator",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Pulsedive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "pulsedive",
+                "operation": "get_links_of_indicator",
+                "operationTitle": "Get Links of Indicator",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9f3bff83-d55f-47fb-840c-fcf675eafad8",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Links of Indicator",
+              "sourceStep": "/api/3/workflow_steps/d9032872-261c-432e-b159-67e558d78da5",
+              "targetStep": "/api/3/workflow_steps/95a6bae9-28c2-4821-8f14-753dd08334b3"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "88ef5998-7aa9-4eb7-a33f-4d8fd4631296",
+          "collection": "/api/3/workflow_collections/8f05187a-042b-4900-99fa-b905c3d79f8c",
+          "triggerLimit": null,
+          "description": "The \"Get Domain Reputation\" action is designed to assess the trustworthiness and threat level of a given Domain Name. \nThis action helps analysts determine whether a domain is potentially malicious, suspicious, or safe.",
+          "name": "Get Domain Reputation",
+          "tag": "#Pulsedive",
+          "recordTags": [
+            "pulsedive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/aa16d3d0-9e38-4ac6-8b19-312ad1c0f6f7",
+          "steps": [
+            {
+              "uuid": "aa16d3d0-9e38-4ac6-8b19-312ad1c0f6f7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "15b830f3-c0a0-4075-8708-826d4eaeefe2",
+                "title": "Pulsedive: Get Domain Reputation",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "48ed7b78-1eee-47a6-bc98-f30fdd932c6c",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Pulsedive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "pulsedive",
+                "operation": "get_domain_reputation",
+                "operationTitle": "Get Domain Reputation",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f4891e97-dd02-486a-bd63-49313e329c93",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Reputation",
+              "sourceStep": "/api/3/workflow_steps/aa16d3d0-9e38-4ac6-8b19-312ad1c0f6f7",
+              "targetStep": "/api/3/workflow_steps/48ed7b78-1eee-47a6-bc98-f30fdd932c6c"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
