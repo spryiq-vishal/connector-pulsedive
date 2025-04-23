@@ -21,6 +21,7 @@
                 "required": true,
                 "visible": true,
                 "editable": true,
+                "description": "Enter the base URL for the Pulsedive API integration. This is typically the root endpoint used for API calls (e.g., https://pulsedive.com).",
                 "tooltip": "Base URL of the Pulsedive API (e.g. https://pulsedive.com)"
             },
             {
@@ -30,6 +31,7 @@
                 "required": true,
                 "visible": true,
                 "editable": true,
+                "description": "Provide your Pulsedive API key used for authenticating API requests. Keep this key secure and do not share it.",
                 "tooltip": "Pulsedive API key for authentication"
             },
             {
@@ -39,6 +41,8 @@
                 "required": true,
                 "visible": true,
                 "editable": true,
+                "description": "Enable this option to verify the SSL certificate of the Pulsedive API server. Disable only if using a self-signed certificate or for testing purposes.",
+                "tooltip": "Toggle SSL certificate verification for API requests",
                 "value": false
             }
         ]
@@ -61,6 +65,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
+                    "description": "Query the Pulsedive API to retrieve threat intelligence and reputation data for a given IP address. Useful for security investigations and incident response.",
                     "tooltip": "Enter the IP address you want to check the reputation for.\t"
                 }
             ],
@@ -288,6 +293,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
+                    "description": "Provide an indicator of compromise (IOC) such as an IP address, domain. This value will be used to retrieve associated links and related threat data from the Pulsedive platform.",
                     "tooltip": "Enter an indicator value such as an IP address or domain name."
                 }
             ],
@@ -575,6 +581,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
+                    "description": "Enter the domain name you want to analyze. This will be used to query its reputation and threat profile from the Pulsedive platform.",
                     "tooltip": "Enter the domain name to analyze for reputation."
                 }
             ],
